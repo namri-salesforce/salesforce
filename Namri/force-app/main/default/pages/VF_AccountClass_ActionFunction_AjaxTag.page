@@ -1,0 +1,52 @@
+<!-- This page verifies for Account type=prospect and active and if billing city,state
+     street country is blank will throw any error message or else it will call a method
+	 which will insert the account record.
+	 And this done by using apex actionFunction through javascript as this is checking
+     for particular part of the page
+-->
+
+
+
+<apex:page controller="AccountClass_ActionFunction_AjaxTag" id="pg">
+     
+ <script>
+    function validateInput()
+    {
+       var actType = document.getElementById('pg:frm:pb:pbs1:type').value; 
+       var state = document.getElementById('pg:frm:pb:pbs2:state').value;
+       var str = document.getElementById('pg:frm:pb:pbs2:str').value;
+       var city = document.getElementById('pg:frm:pb:pbs2:city').value;
+       
+       if(actType=='Prospect' && (state=='' || str=='' || city==''))
+       {
+         alert('Please Enter Billing Details');
+       }
+        else
+           { 
+               callSave();
+           }
+   }
+ </script>
+    <apex:form id="frm">
+        <apex:actionFunction name="callSave" action="{!saveAccount}"/>
+        <apex:pageblock id="pb">
+           <apex:pageBlockSection title="Account Details" id="pbs1">
+               <apex:inputfield value="{!Acctobj.Name}"/>
+               <apex:inputfield value="{!Acctobj.Phone}"/>
+               <apex:inputfield value="{!Acctobj.Fax}"/>
+               <apex:inputfield value="{!Acctobj.Industry}"/>
+               <apex:inputfield value="{!Acctobj.Type}" id="type"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Billing Details" id="pbs2">
+               <apex:inputfield value="{!Acctobj.BillingCity}" id="city"/>
+               <apex:inputfield value="{!Acctobj.BillingState}" id="state"/>
+               <apex:inputfield value="{!Acctobj.BillingStreet}" id="str"/>
+               
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" onclick="validateInput();return false;"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

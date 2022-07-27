@@ -1,0 +1,4 @@
+<aura:component >
+    <c:LC_ApplicationEventNotifier/>
+    <c:LC_ApplicationEventHandler/>
+</aura:component>

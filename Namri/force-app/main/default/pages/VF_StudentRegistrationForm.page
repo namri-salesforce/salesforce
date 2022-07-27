@@ -1,0 +1,46 @@
+<apex:page StandardController="Student__c">
+  <apex:form >
+    <apex:sectionHeader title="New Student" subtitle="Student Edit"/>
+    <apex:pageBlock title="Student Edit">
+       
+         <apex:pageblockButtons >
+           <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Save & New" action="{!Save}" />
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               </apex:pageblockButtons>
+           <apex:pageblocksection title="Student Information" columns="2">
+               
+            <apex:inputfield value="{!Student__c.Name}"/>
+            <apex:inputfield value="{!Student__c.Date_Of_Birth__c}"/>
+            <apex:inputfield value="{!Student__c.Gender__c}"/>
+            <apex:inputfield value="{!Student__c.Guardian__c}"/>
+            <apex:inputfield value="{!Student__c.Guardian_Name__c}"/>
+            <apex:inputfield value="{!Student__c.Father_Occupation__c}"/>
+            <apex:inputfield value="{!Student__c.Mother_Occupation__c}"/>
+            <apex:inputfield value="{!Student__c.Family_Annual_Income__c}"/>
+            <apex:inputfield value="{!Student__c.Community__c}"/>
+            <apex:inputfield value="{!Student__c.Course__c}"/>
+            <apex:inputfield value="{!Student__c.Proofs_Submitted__c}"/>
+            <apex:inputfield value="{!Student__c.Passport_No__c}"/>
+          </apex:pageblocksection>
+           <apex:pageblocksection title="Educational Details" columns="1">
+            <apex:inputfield value="{!Student__c.Educational_Qualification__c}"/>
+            <apex:inputfield value="{!Student__c.Year_Of_Pass__c}"/>
+            <apex:inputfield value="{!Student__c.Passed_Out_Orgn__c}"/>
+           </apex:pageblocksection>
+           <apex:pageblocksection title="Contact Details" columns="2">
+            <apex:inputfield value="{!Student__c.Mobile_No__c}"/>
+            <apex:inputfield value="{!Student__c.Fathers_Phone_No__c}"/>
+            <apex:inputfield value="{!Student__c.Email__c}"/>
+            <apex:inputfield value="{!Student__c.Address_For_Correspondence__c}"/>
+            <apex:inputfield value="{!Student__c.Permanent_Address__c}"/>
+           </apex:pageblocksection>
+           <apex:pageblocksection title="Courses Interested" columns="1">
+            <apex:inputfield value="{!Student__c.Interested_Course1__c}"/>
+            <apex:inputfield value="{!Student__c.Interested_Course2__c}"/>
+            <apex:inputfield value="{!Student__c.Other_Interested_Course__c}"/>
+          </apex:pageblocksection>
+       </apex:pageBlock>
+    </apex:form>
+        
+</apex:page>

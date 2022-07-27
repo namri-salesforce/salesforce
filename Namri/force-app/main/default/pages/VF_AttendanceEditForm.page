@@ -1,0 +1,20 @@
+<apex:page standardController="Attendance__c">
+    <apex:form >
+        <apex:sectionHeader title="New Attendance " subtitle="Attendance Edit"/>
+       <apex:pageBlock title="Attendance Edit">
+          <apex:pageblockButtons >
+           <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Save & New" action="{!Save}" />
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               </apex:pageblockButtons>
+           <apex:pageblocksection columns="1" title="Course Info">
+                <apex:inputfield value="{!Attendance__c.Student_Name__c}"/>
+                <apex:inputfield value="{!Attendance__c.Batch__c}"/>
+                <apex:inputfield value="{!Attendance__c.Attendance__c}"/>
+              
+                      
+           </apex:pageblocksection>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

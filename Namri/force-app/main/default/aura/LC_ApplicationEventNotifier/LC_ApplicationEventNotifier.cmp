@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:registerEvent name="appEvent" type="c:LE_ApplicationEvent"/>
+    <h1>
+       Application Even Notifier
+    </h1>
+    <ui:button label="Fire Application Event" press="{!c.fireAppEvent}"/>
+    <hr/>
+</aura:component>

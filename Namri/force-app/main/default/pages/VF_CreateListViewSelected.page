@@ -1,0 +1,21 @@
+<apex:page standardController="Account" recordSetVar="Accounts Selected">
+    <apex:form >
+       <apex:pageblock >
+        
+            <!-- <apex:pageBlockTable value="{!selected}" var="acctobj">
+           <apex:column value="{!acctobj.Name}"/>
+              <apex:column value="{!acctobj.Phone}"/>
+              <apex:column value="{!acctobj.Fax}"/>
+              <apex:column value="{!acctobj.Industry}"/>
+              <apex:column value="{!acctobj.Type}"/>
+              <apex:column value="{!acctobj.Rating}"/>
+           
+           </apex:pageBlockTable>-->
+        <apex:pageBlockTable value="{!selected}" var="acctobj">
+            <apex:repeat value="{!$ObjectType.Account.FieldSets.Account_Records}" var="field">
+                <apex:column headerValue="{!field.Label}" value="{!acctobj[field]}"/>
+            </apex:repeat>   
+        </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

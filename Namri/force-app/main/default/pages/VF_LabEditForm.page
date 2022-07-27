@@ -1,0 +1,37 @@
+<apex:page standardController="Lab__c">
+    <apex:form >
+        <apex:sectionHeader title="New Lab" subtitle="Lab Edit"/>
+       <apex:pageBlock title="Lab Edit">
+          <apex:pageblockButtons >
+           <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Save & New" action="{!Save}" />
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               </apex:pageblockButtons>
+           <apex:pageblocksection columns="1" title="Course Info">
+                <apex:inputfield value="{!Lab__c.Student_Id__c}"/>
+               
+                <apex:inputfield value="{!Lab__c.Course__c}"/>
+                   
+                   <apex:inputfield value="{!Lab__c.Date__c}"/>
+               <apex:inputfield value="{!Lab__c.Attendance__c}"/>
+               <apex:inputfield value="{!Lab__c.In_Time__c}"/>
+               <apex:inputfield value="{!Lab__c.System_No__c}"/>
+               <apex:inputfield value="{!Lab__c.Task_Assigned__c}"/>
+                   <apex:inputfield value="{!Lab__c.Faculty_Name__c}"/>
+                   <apex:inputfield value="{!Lab__c.Performance__c}"/>	
+               <apex:inputfield value="{!Lab__c.Remarks__c}"/>
+                 
+                  <apex:inputfield value="{!Lab__c.Out_Time__c}"/>
+                  <apex:inputfield value="{!Lab__c.Out_Time__c}"/>
+                   
+               
+               
+               
+               
+               
+               
+           </apex:pageblocksection>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,31 @@
+<!-- This Page pulls 20 accounts and displays related accounts using ActionSupport and ActionStatus
+-->
+
+<apex:page controller="ShowRelatedContacts_ActionStatus">
+    <apex:form >
+     <apex:pageBlock >
+        <apex:pageBlockSection >
+           <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Select an Account"/>
+               <apex:selectList value="{!selectedAcct}" size="1">
+                   <apex:selectOptions value="{!acctNames}"/>
+                      <apex:actionSupport event="onchange" action="{!retrievecontacts}" reRender="pb" status="loadRecords"/>
+               </apex:selectList>
+            </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>   
+     </apex:pageBlock>
+        <apex:pageBlock title="Related Contacts" id="pb">
+            <apex:actionStatus id="loadRecords">
+                <apex:facet name="start">
+                   <apex:image value="{!$Resource.Img1}" style="width: 231px;height: 110px;"/>
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!conList}" var="contobj">
+                        <apex:column value="{!contobj.name}"/>
+                         <apex:column value="{!contobj.Email}"/>s
+                    </apex:pageBlockTable>
+                </apex:facet>
+            </apex:actionStatus>
+         </apex:pageBlock>
+      </apex:form>
+  </apex:page>

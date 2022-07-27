@@ -1,0 +1,50 @@
+<apex:page standardController="Opportunity" >
+    <script src="/soap/ajax/49.0/connection.js"></script>
+    <script src="/soap/ajax/45.0/apex.js"></script>
+    <script>
+      function deleteme()
+    {
+        sforce.connection.sessionId = '{!GETSESSIONID()}'; 
+        alert(sforce.connection.sessionId);
+        var O = new sforce.SObject("Opportunity");
+        O.Id = "{!Opportunity.Id}"
+        O.StageName='Closed Won';
+        sforce.connection.deleteIds([O]);
+        window.location.reload();
+        
+    } 
+    
+      function closeme()
+    {
+        // STEP 1 -- Always get the session id by below syntax
+        sforce.connection.sessionId = '{!GETSESSIONID()}'; 
+        alert(sforce.connection.sessionId);
+        //step2 identify the object
+        var O = new sforce.SObject("Opportunity");
+       
+        //step 3 Identify record Id 
+        
+        O.Id = "{!Opportunity.Id}"
+        
+        // step 4 Make Changes
+        O.StageName='Closed Won';
+        //step 5 Commit to Database
+        sforce.connection.update([O]);
+        // step 6  Refresh/Reload the page
+        window.location.reload();
+        
+    }
+    </script>
+    <apex:form >
+       <apex:pageBlock >
+          <apex:pageBlockSection title="Opportunity Details">
+              <apex:outputField value="{!Opportunity.Name}"/>
+              <apex:outputField value="{!Opportunity.StageName}"/>
+              <apex:outputField value="{!Opportunity.Probability}"/>
+              <apex:outputField value="{!Opportunity.Amount}"/>
+              <apex:commandButton value="close 99" onclick="closeme()"/>
+               <apex:commandButton value="close 9999" onclick="deleteme()"/>
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

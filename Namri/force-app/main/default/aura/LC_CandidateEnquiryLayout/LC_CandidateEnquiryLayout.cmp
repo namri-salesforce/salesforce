@@ -1,0 +1,48 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <!--<aura:attribute type="Candidate_Enquiry__c" name="canden" default="{sObject:'Candidate_Enquiry__c'}"/>--> 
+   
+    <lightning:card title="New Candidate Enquiry" iconName="standard:account">
+              <aura:set attribute="actions">
+            <lightning:layout>
+                <lightning:buttongroup>
+                    <lightning:buttonmenu menuAlignment="left">
+                      <lightning:menuItem label="New Course" value="newcourse" iconName="utility:add"/>
+                        <lightning:menuItem label="Note" value="note"/>
+                        <lightning:menuItem label="Lab Work" value="labwork"/>
+                        <lightning:menuItem label="Email" value="email"/>s
+                    </lightning:buttonmenu>
+               <lightning:button label="New Course" onclick="{!newcourse}" variant="brand"/>
+               <lightning:button label="New Student" onclick="{!newcourse}"/>
+               <lightning:button label="Submit For Approval" onclick="{!newcourse}"/>
+               </lightning:buttongroup>
+            </lightning:layout>
+            </aura:set>
+    </lightning:card>
+    <!--
+    <lightning:card title="Candidate Information" variant="narrow" class="Canden1">
+    </lightning:card>
+    <lightning:card>
+        <lightning:layout multiplerows="true"  >
+           <lightning:layoutitem size="3" >
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>
+            </lightning:layoutitem>
+            <lightning:layoutitem size="3">
+              <lightning:input label="Candite Name" value="{!v.canden.Candidate_Name__c}"/>
+               <lightning:input label="Candidate Name" value="{!v.canden.Candidate_Name__c}"/>            
+            </lightning:layoutitem>
+        </lightning:layout>
+        -->
+    
+</aura:component>

@@ -1,0 +1,36 @@
+<apex:page standardController="Candidate_Enquiry__c" >
+ <apex:form >
+      <apex:sectionHeader title="New Candidate Enquiry" subtitle="Candidate Enquiry Edit"/>
+    <apex:pageBlock title="Candidate Enquiry Edit">
+         <apex:pageblockButtons >
+           <apex:commandButton value="Save" action="{!Save}"/>
+            <apex:commandButton value="Save & New" action="{!Save}" />
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+               </apex:pageblockButtons>
+           <apex:pageblocksection title="Candidate Information" columns="2">
+               
+            <apex:inputfield value="{!Candidate_Enquiry__c.Candidate_Name__c}"/>
+             <apex:inputfield value="{!Candidate_Enquiry__c.Passed_Out_Orgn__c}"/>
+            <apex:inputfield value="{!Candidate_Enquiry__c.Gaurdian_Name__c}"/>
+            <apex:inputfield value="{!Candidate_Enquiry__c.Family_Annual_Income__c}"/>
+            
+            <apex:inputfield value="{!Candidate_Enquiry__c.Course__c}"/>
+            
+          </apex:pageblocksection>
+           
+            
+            <apex:pageblocksection title="Contact Details" columns="2">
+            <apex:inputfield value="{!Candidate_Enquiry__c.Mobile_No__c}"/>
+            
+            <apex:inputfield value="{!Candidate_Enquiry__c.Email__c}"/>
+            
+            <apex:inputfield value="{!Candidate_Enquiry__c.Permanent_Address__c}"/>
+           </apex:pageblocksection>
+           <apex:pageblocksection title="Courses Interested" columns="1">
+            <apex:inputfield value="{!Candidate_Enquiry__c.Interested_Course1__c}"/>
+            <apex:inputfield value="{!Candidate_Enquiry__c.Interested_Course2__c}"/>
+            
+          </apex:pageblocksection>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

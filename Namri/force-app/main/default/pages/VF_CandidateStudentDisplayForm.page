@@ -1,0 +1,21 @@
+<apex:page standardController="Candidate_Enquiry__c" recordSetVar="CandItems">
+    <apex:form title="Candidateform">
+        <apex:pageBlock >
+           <apex:pageBlockSection title="Candidates Dsipaly" columns="2">
+               <apex:pageBlockTable value="{!CandItems}" var="Candvar"  >
+               
+               <!--<apex:column >
+                   <apex:inputCheckbox />
+                 </apex:column>
+                <apex:column headerValue="Action"/>-->
+            <apex:column value="{!Candvar.Name}"/>
+            <apex:column value="{!Candvar.Candidate_Name__c}"/>
+            <apex:column value="{!Candvar.Mobile_No__c}"/>
+            <apex:column value="{!Candvar.Educational_Qualification__c}"/>
+            <apex:column value="{!Candvar.Interested_Course1__c}"/>
+            <apex:column value="{!Candvar.Course__c}"/>
+          </apex:pageBlockTable>
+         </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
