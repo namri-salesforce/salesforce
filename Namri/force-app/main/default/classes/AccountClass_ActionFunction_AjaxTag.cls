@@ -9,5 +9,6 @@ public class AccountClass_ActionFunction_AjaxTag
     {
         insert Acctobj;
         return new pagereference('/'+Acctobj);
+        // comment added for class
     }
 }
